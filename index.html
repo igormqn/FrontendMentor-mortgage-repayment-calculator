@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">  
+  <title>Frontend Mentor | Mortgage repayment calculator</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div class="custom-mortgage-calculator">
+    <div class="custom-left">
+      <div class="custom-header">
+        <h2>Mortgage Calculator</h2>
+        <button id="clear-btn">Clear All</button>
+      </div>
+      <form action="" id="mortgage-form">
+        <div class="custom-form-item">
+          <label class="custom-light-text" for="mortgage-amount">Mortgage Amount</label>
+          <div class="custom-form-flex" id="mortgage-amount-main">
+            <p class="custom-form-symbol">$</p>
+            <input type="number" name="mortgage-amount" id="mortgage-amount" required>
+          </div>
+          <p class="custom-form-alert" id="amount-alert">This field is required</p>
+        </div>
+        <div class="custom-form-item">
+          <div class="custom-form-col">
+            <div class="custom-form-item">
+              <label for="mortgage-term" class="custom-light-text">Mortgage Term</label>
+              <div class="custom-form-flex">
+                <input type="number" name="mortgage-term" id="mortgage-term">
+                <p class="custom-form-symbol">years</p>
+              </div>
+              <p class="custom-form-alert" id="term-alert">This field is required</p>
+            </div>
+            <div class="custom-form-item">
+              <label for="interest-rate">Interest Rate</label>
+              <div class="custom-form-flex" id="interest-rate-main">
+                <input type="number" name="interest-rate" id="interest-rate" step="0.01" required>
+                <p class="custom-form-symbol">%</p>
+              </div>
+              <p class="custom-form-alert" id="rate-alert">This field is required</p>
+            </div>
+          </div>
+        </div>
+        <div class="custom-form-item">
+          <label class="custom-light-text" for="mortgage-type">Mortgage Type</label>
+          <div class="custom-radio-inputs">
+            <input type="radio" name="mortgage-type" id="repayment" value="repayment" required>
+            <label for="repayment">Repayment</label>
+          </div>
+          <div class="custom-radio-inputs">
+            <input type="radio" name="mortgage-type" id="interest-only" value="interest-only" required>
+            <label for="interest-only">Interest Only</label>
+          </div>
+          <p class="custom-form-alert" id="type-alert">This field is required</p>
+        </div>
+        <div class="custom-form-item">
+          <button id="calculate-btn" class="custom-calculate-btn" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+              <path fill="#133041" d="M18.75 2.25H5.25a1.5 1.5 0 0 0-1.5 1.5v16.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5V3.75a1.5 1.5 0 0 0-1.5-1.5Zm-10.5 16.5a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm0-3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25ZM12 18.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25ZM12 15a1.125 1.125 0 1 1 0-2.25A1.125 1.125 0 0 1 12 15Zm3.75 3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm0-3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm1.5-5.25a.75.75 0 0 1-.75.75h-9a.75.75 0 0 1-.75-.75V6a.75.75 0 0 1 .75-.75h9a.75.75 0 0 1 .75.75v3.75Z"/>
+            </svg>
+            Calculate Payments
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="custom-right">
+      <div class="custom-default-text" id="default-text">
+        <img src="./assets/images/illustration-empty.svg" alt="Illustration">
+        <h2>Results shown here</h2>
+        <p class="custom-light-text">Complete the form and click "Calculate Payments" to see what your monthly repayments would be.</p>
+      </div>
+      <div id="calculations-container" class="custom-calculations-container">
+        <h2>Your results</h2>
+        <p class="custom-light-text">Your results are shown below based on the information you provided. To adjust the results, edit the form and click "Calculate Payments" again.</p>
+        <div class="custom-calculations">
+          <div class="custom-monthly">
+            <p class="custom-light-text">Your monthly repayments</p>
+            <span id="result" class="custom-monthly-result"></span>
+          </div>
+          <div class="custom-line"></div>
+          <div class="custom-total-term">
+            <p class="custom-light-text">Total you'll repay over the term</p>
+            <span id="term-result" class="custom-term-result"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+      Coded by <a href="https://www.linkedin.com/in/igor-maquin/">Igor Maquin</a>.
+    </div>
+  </div>
+</body>
+</html>
